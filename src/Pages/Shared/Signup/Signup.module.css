@@ -1,0 +1,12 @@
+body {
+  font-family: "Roboto", sans-serif;
+}
+a {
+  text-decoration: none;
+}
+
+@media (min-width: 0px) and (max-width: 991px) {
+  .signupImg {
+    display: none;
+  }
+}
