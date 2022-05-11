@@ -24,6 +24,12 @@ const Header = () => {
             <Link to="/" className="text-white nav-link">
               Home
             </Link>
+            <Link to="/manage" className="text-white nav-link">
+              Manage-Inventory
+            </Link>
+            <Link to="/addproduct" className="text-white nav-link">
+              Add-Product
+            </Link>
             <Link to="/login" className="text-white nav-link">
               Login
             </Link>

@@ -17,8 +17,14 @@ const HomeNav = () => {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="ms-auto">
-            <Link to="/" className="text-white nav-link">
+            <Link to="/home" className="text-white nav-link">
               Home
+            </Link>
+            <Link to="/manage" className="text-white nav-link">
+              Manage-Inventory
+            </Link>
+            <Link to="/addproduct" className="text-white nav-link">
+              Add-Product
             </Link>
             <Link to="/login" className="text-white nav-link">
               Login

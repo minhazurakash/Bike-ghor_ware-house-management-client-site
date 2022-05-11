@@ -17,6 +17,7 @@ const Newslater = () => {
                   type="text"
                   class="form-control"
                   aria-label="Large"
+                  placeholder="Enter your email"
                   aria-describedby="inputGroup-sizing-sm"
                 />
                 <button className="btn btn-danger">Subscribe</button>
