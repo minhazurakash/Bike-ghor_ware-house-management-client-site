@@ -5,10 +5,10 @@ import { useParams } from "react-router-dom";
 const SingleInventory = () => {
   const { id } = useParams();
   return (
-    <div className="container py-5">
+    <div className="container p-5">
       <h2 className="text-center">This is Product {id}</h2>
       <div className="row">
-        <div className="col-md-6 mx-auto">
+        <div className=" col-md-8 col-lg-6 mx-auto">
           <Form>
             <Form.Group className="mb-3" controlId="formBasicEmail">
               <Form.Control type="email" placeholder="Enter email" />

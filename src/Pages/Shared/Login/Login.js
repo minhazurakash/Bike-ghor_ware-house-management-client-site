@@ -5,10 +5,10 @@ import login from "./Login.module.css";
 
 const Login = () => {
   return (
-    <div className="container d-flex justify-content-center align-items-center vh-100">
-      <div className="l-side w-75 border p-4 rounded">
+    <div className="container d-flex justify-content-center align-items-center vh-100 ">
+      <div className=" w-75 border p-4 rounded">
         <div className="row">
-          <div className="col-lg-6">
+          <div className=" col-md-12 col-lg-6">
             <h2 className="login-header text-primary mb-4">Log in</h2>
             <h5 className="mb-3">Login to stay connected.</h5>
             <Form>
@@ -33,7 +33,7 @@ const Login = () => {
               </Link>
             </span>
           </div>
-          <div className="r-side col-lg-6 d-flex justify-content-center animate__animated animate__fadeIn animate__delay-1s">
+          <div className=" col-12 col-lg-6 d-flex justify-content-center animate__animated animate__fadeIn animate__delay-1s">
             <img
               className={`${login.loginImg} w-75`}
               src="https://i.ibb.co/qWncyyv/login.png"
