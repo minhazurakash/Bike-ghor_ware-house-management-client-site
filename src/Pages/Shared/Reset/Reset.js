@@ -9,7 +9,10 @@ const Reset = () => {
         <div className="col-lg-6 col-md-10 border p-4 rounded mx-auto">
           <div>
             <div className="d-flex justify-content-around">
-              <Link className="mt-1" to="/login">
+              <Link
+                className="mt-1 animate__animated animate__fadeIn animate__infinite	infinite animate__slower"
+                to="/login"
+              >
                 <i class="fa-solid fa-arrow-left fs-2"></i>
               </Link>
               <h2 className="text-primary mb-4">Reset Password</h2>

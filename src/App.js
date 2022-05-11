@@ -6,6 +6,7 @@ import Reset from "./Pages/Shared/Reset/Reset";
 import Home from "./Pages/Home/Home";
 import Header from "././Pages/Home/Header/Header";
 import Footer from "./Pages/Shared/Footer/Footer";
+import "animate.css";
 
 function App() {
   return (

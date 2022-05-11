@@ -1,9 +1,10 @@
 import React from "react";
 import inventory from "./../Inventory/Inventory.module.css";
+import "animate.css";
 
 const InventoryProduct = ({ product }) => {
   return (
-    <div className="col">
+    <div className="col ">
       <div className={`${inventory.mainCard} card h-100`}>
         <div
           className={`${inventory.cardHead} d-flex justify-content-between align-items-center p-3`}

@@ -13,7 +13,7 @@ const Inventory = () => {
   console.log(products);
   return (
     <div id="inventory" className="py-4">
-      <div className="text-center ">
+      <div className="text-center animate__animated animate__slideInLeft">
         <i className="fa-solid fa-motorcycle fs-3"></i>
         <h5 className="text-danger">TAKING RIDES TO A NEWER LEVEL</h5>
         <h1 className="fw-bold mb-5">WHICH ONE DO YOU LIKE MOST?</h1>

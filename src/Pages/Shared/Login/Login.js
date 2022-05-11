@@ -33,7 +33,7 @@ const Login = () => {
               </Link>
             </span>
           </div>
-          <div className="r-side col-lg-6 d-flex justify-content-center">
+          <div className="r-side col-lg-6 d-flex justify-content-center animate__animated animate__fadeIn animate__delay-1s">
             <img
               className={`${login.loginImg} w-75`}
               src="https://i.ibb.co/qWncyyv/login.png"
