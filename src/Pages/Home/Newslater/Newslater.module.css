@@ -1,0 +1,9 @@
+.newslater {
+  background-image: url("https://i.ibb.co/MM50j5c/newslater.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+.layer {
+  background: rgba(0, 0, 0, 0.6);
+}

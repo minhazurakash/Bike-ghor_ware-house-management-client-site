@@ -1,9 +1,11 @@
 import React from "react";
+import Testimonial from "../Shared/Testimonial/Testimonial";
 import Banner from "./Banner/Banner";
 import Feature from "./Feature/Feature";
 import style from "./Home.module.css";
 import HomeNav from "./HomeNav/HomeNav";
 import Inventory from "./Inventory/Inventory";
+import Newslater from "./Newslater/Newslater";
 
 const Home = () => {
   return (
@@ -16,6 +18,8 @@ const Home = () => {
       </div>
       <Inventory></Inventory>
       <Feature></Feature>
+      <Newslater></Newslater>
+      <Testimonial></Testimonial>
     </div>
   );
 };

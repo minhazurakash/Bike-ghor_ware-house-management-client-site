@@ -15,16 +15,20 @@ const Feature = () => {
             alt=""
           />
         </div>
-        <div className="col-lg-6">
-          <h5 className="text-danger fw-bold">TAKING RIDES TO A NEWER LEVEL</h5>
-          <h1 className="fw-bolder mb-4">
-            A STEP ABOVE WITH <br /> RIDER-FRIENDLY NATURE
-          </h1>
-          <p className="lh-lg text-muted mb-5">
-            We are Bike Ghor. The most popular Bike dealer point in all over
-            Bangladesh. People loves us and also loves our bikes. We never get
-            any complain about our service from any customer.
-          </p>
+        <div className="col-lg-6 ">
+          <div className="text-center">
+            <h5 className="text-danger fw-bold">
+              TAKING RIDES TO A NEWER LEVEL
+            </h5>
+            <h1 className="fw-bolder mb-4">
+              A STEP ABOVE WITH <br /> RIDER-FRIENDLY NATURE
+            </h1>
+            <p className="lh-lg text-muted mb-5 text-start">
+              We are Bike Ghor. The most popular Bike dealer point in all over
+              Bangladesh. People loves us and also loves our bikes. We never get
+              any complain about our service from any customer.
+            </p>
+          </div>
           <div>
             <div className="row">
               <div className="col-6 col-sm-4 mb-3 d-flex justify-content-center align-items-center">
