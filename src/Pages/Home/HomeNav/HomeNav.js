@@ -1,16 +1,12 @@
 import React from "react";
 import { Container, Nav, Navbar } from "react-bootstrap";
-import { Link, useLocation } from "react-router-dom";
+import { Link } from "react-router-dom";
 
-const Header = () => {
-  const location = useLocation();
-
+const HomeNav = () => {
   return (
     <Navbar
       // className="position-sticky"
-      className={
-        location.pathname === "/" ? "d-none " : "py-3 navbar-dark bg-dark fs-5"
-      }
+      className="py-4 navbar-dark bg-none fs-5"
       bg="none"
       expand="lg"
     >
@@ -32,4 +28,4 @@ const Header = () => {
   );
 };
 
-export default Header;
+export default HomeNav;

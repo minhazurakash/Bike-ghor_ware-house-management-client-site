@@ -15,7 +15,7 @@ const Banner = () => {
         </p>
       </div>
       <div className="text-center py-5">
-        <a href="" className="btn btn-outline-warning">
+        <a href="#inventory" className="btn btn-outline-warning">
           Explore us more
         </a>
       </div>

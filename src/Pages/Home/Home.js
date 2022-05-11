@@ -1,7 +1,7 @@
 import React from "react";
 import Banner from "./Banner/Banner";
-import Header from "./Header/Header";
 import style from "./Home.module.css";
+import HomeNav from "./HomeNav/HomeNav";
 import Inventory from "./Inventory/Inventory";
 
 const Home = () => {
@@ -9,7 +9,7 @@ const Home = () => {
     <div>
       <div id={style.home}>
         <div className={style.layer}>
-          <Header></Header>
+          <HomeNav></HomeNav>
           <Banner></Banner>
         </div>
       </div>
