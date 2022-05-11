@@ -11,6 +11,7 @@ import ManageInventory from "./Pages/ManageInventory/ManageInventory";
 
 import SingleInventory from "./Pages/Shared/SingleInventory/SingleInventory";
 import AddProduct from "./Pages/AddProduct/AddProduct";
+import MyItem from "./Pages/MyItem/MyItem";
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
         <Route path="/signup" element={<Signup></Signup>}></Route>
         <Route path="/reset" element={<Reset></Reset>}></Route>
         <Route path="/addproduct" element={<AddProduct></AddProduct>}></Route>
+        <Route path="/myitem" element={<MyItem></MyItem>}></Route>
         <Route
           path="/manage"
           element={<ManageInventory></ManageInventory>}

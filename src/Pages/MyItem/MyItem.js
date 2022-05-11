@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-const ManageInventory = () => {
+const MyItem = () => {
   const [products, setProducts] = useState([]);
   const navigate = useNavigate();
   useEffect(() => {
@@ -13,15 +13,8 @@ const ManageInventory = () => {
     <div className="container">
       <div className="text-center py-5">
         <h1 className="text-uppercase fw-bold mb-4">
-          Checkout our all products
+          Here are only those product which you added
         </h1>
-        <h4 className="d-inline">Do you have any new product?</h4>{" "}
-        <button
-          onClick={() => navigate("/addproduct")}
-          className="btn btn-primary"
-        >
-          Add
-        </button>
       </div>
       <div className="table">
         <table class="table table-striped text-center">
@@ -49,4 +42,4 @@ const ManageInventory = () => {
   );
 };
 
-export default ManageInventory;
+export default MyItem;

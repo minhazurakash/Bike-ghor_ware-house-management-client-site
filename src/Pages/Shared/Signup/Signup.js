@@ -1,9 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import { Button, Form } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import signup from "./Signup.module.css";
 
 const Signup = () => {
+  const [checked, setChecked] = useState(false);
+
   return (
     <div className="container d-flex justify-content-center align-items-center vh-100">
       <div className="l-side w-75 border p-4 rounded">
@@ -13,14 +15,15 @@ const Signup = () => {
             <h5 className="mb-3">Signup to stay connected.</h5>
             <Form>
               <Form.Group className="mb-3" controlId="formBasicEmail">
-                <Form.Control type="email" placeholder="Enter email" />
+                <Form.Control type="email" placeholder="Enter email" required />
               </Form.Group>
 
               <Form.Group className="mb-3" controlId="formBasicPassword">
-                <Form.Control type="password" placeholder="Password" />
+                <Form.Control type="password" placeholder="Password" required />
               </Form.Group>
               <Form.Group className="mb-3" controlId="formBasicCheckbox">
                 <Form.Check
+                  onClick={() => setChecked(!checked)}
                   type="checkbox"
                   label="accept our terms and condition"
                 />
@@ -29,7 +32,7 @@ const Signup = () => {
                 variant="outline-primary"
                 type="submit"
                 className=" mb-4"
-                disabled={true}
+                disabled={!checked}
               >
                 Signup
               </Button>

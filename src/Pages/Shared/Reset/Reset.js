@@ -19,7 +19,7 @@ const Reset = () => {
             </div>
             <Form>
               <Form.Group className="mb-3" controlId="formBasicEmail">
-                <Form.Control type="email" placeholder="Enter email" />
+                <Form.Control type="email" placeholder="Enter email" required />
               </Form.Group>
 
               <Button variant="outline-primary" type="submit" className=" mb-4">
