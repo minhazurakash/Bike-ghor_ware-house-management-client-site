@@ -1,8 +1,10 @@
 import React from "react";
 import inventory from "./../Inventory/Inventory.module.css";
 import "animate.css";
+import { useNavigate } from "react-router-dom";
 
 const InventoryProduct = ({ product }) => {
+  const navigate = useNavigate();
   return (
     <div className="col ">
       <div className={`${inventory.mainCard} card h-100`}>
@@ -38,7 +40,12 @@ const InventoryProduct = ({ product }) => {
           <p className="card-text">{product.description}</p>
         </div>
         <div className={`${inventory.updateBtn} `}>
-          <button className="btn btn-outline-warning">Update</button>
+          <button
+            onClick={() => navigate(`/inventory/${product.id}`)}
+            className="btn btn-outline-warning"
+          >
+            Update
+          </button>
         </div>
       </div>
     </div>

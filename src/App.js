@@ -7,6 +7,7 @@ import Home from "./Pages/Home/Home";
 import Header from "././Pages/Home/Header/Header";
 import Footer from "./Pages/Shared/Footer/Footer";
 import "animate.css";
+import SingleInventory from "./Pages/Shared/SingleInventory/SingleInventory";
 
 function App() {
   return (
@@ -18,6 +19,10 @@ function App() {
         <Route path="/login" element={<Login></Login>}></Route>
         <Route path="/signup" element={<Signup></Signup>}></Route>
         <Route path="/reset" element={<Reset></Reset>}></Route>
+        <Route
+          path="/inventory/:id"
+          element={<SingleInventory></SingleInventory>}
+        ></Route>
       </Routes>
       <Footer></Footer>
     </div>
