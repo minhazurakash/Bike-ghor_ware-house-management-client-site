@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import "./ManageInventory.css";
 
 const ManageInventory = () => {
   const [products, setProducts] = useState([]);
