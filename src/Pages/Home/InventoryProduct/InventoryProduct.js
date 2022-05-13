@@ -17,11 +17,7 @@ const InventoryProduct = ({ product }) => {
           </div>
           <h5 className="text-danger">${product.price}</h5>
         </div>
-        <img
-          src="https://i.ibb.co/dctKvv0/bike-1.jpg"
-          className="card-img-top"
-          alt="..."
-        />
+        <img src={`${product.img}`} className="card-img-top" alt="..." />
         <div className="card-body">
           <div className="d-flex justify-content-around align-items-center mb-3">
             <div>

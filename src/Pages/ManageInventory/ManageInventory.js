@@ -37,7 +37,7 @@ const ManageInventory = () => {
             {products.map((product) => (
               <tr key={product._id}>
                 <td>{product.name}</td>
-                <td>{product.price}</td>
+                <td>{product.quantity}</td>
                 <td>
                   <button className="btn btn-danger">Delete</button>
                 </td>

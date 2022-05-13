@@ -1,5 +1,7 @@
 import "animate.css";
 import "bootstrap/dist/css/bootstrap.min.css";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import { Route, Routes } from "react-router-dom";
 import Login from "./Pages/Shared/Login/Login";
 import Signup from "./Pages/Shared/Signup/Signup";
@@ -49,6 +51,7 @@ function App() {
         ></Route>
       </Routes>
       <Footer></Footer>
+      <ToastContainer></ToastContainer>
     </div>
   );
 }
