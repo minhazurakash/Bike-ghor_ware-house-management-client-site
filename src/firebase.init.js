@@ -5,6 +5,7 @@ import { initializeApp } from "firebase/app";
 // https://firebase.google.com/docs/web/setup#available-libraries
 
 // Your web app's Firebase configuration
+
 const firebaseConfig = {
   apiKey: "AIzaSyBkR7I47co1CTogrDj8MBtVrxL4AnpdQzE",
   authDomain: "bike-ghor.firebaseapp.com",

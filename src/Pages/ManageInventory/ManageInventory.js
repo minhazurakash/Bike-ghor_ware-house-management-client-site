@@ -6,7 +6,7 @@ const ManageInventory = () => {
   const [products, setProducts] = useState([]);
   const navigate = useNavigate();
   useEffect(() => {
-    fetch("inventory.json")
+    fetch("http://localhost:5000/products")
       .then((res) => res.json())
       .then((data) => setProducts(data));
   }, []);
@@ -35,7 +35,7 @@ const ManageInventory = () => {
           </thead>
           <tbody>
             {products.map((product) => (
-              <tr key={product.id}>
+              <tr key={product._id}>
                 <td>{product.name}</td>
                 <td>{product.price}</td>
                 <td>

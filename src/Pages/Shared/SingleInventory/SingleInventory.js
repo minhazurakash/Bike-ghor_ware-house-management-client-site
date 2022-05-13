@@ -11,19 +11,19 @@ const SingleInventory = () => {
         <div className=" col-md-8 col-lg-6 mx-auto">
           <Form>
             <Form.Group className="mb-3" controlId="formBasicEmail">
-              <Form.Control type="email" placeholder="Enter email" />
-            </Form.Group>
-
-            <Form.Group className="mb-3" controlId="formBasicPrice">
-              <Form.Control type="number" placeholder="Price" />
+              <Form.Control type="email" placeholder="Product name" />
             </Form.Group>
 
             <Form.Group className="mb-3" controlId="formBasicPrice">
               <Form.Control type="text" placeholder="Brand" />
             </Form.Group>
-            <label htmlFor="">Add more abailable Quantity</label>
+
             <Form.Group className="mb-3" controlId="formBasicPrice">
               <Form.Control type="number" placeholder="Quantity" />
+            </Form.Group>
+            <label htmlFor="">Add more abailable Quantity</label>
+            <Form.Group className="mb-3" controlId="formBasicPrice">
+              <Form.Control type="number" placeholder="Add Quantity" />
             </Form.Group>
             <Button variant="outline-primary" type="submit" className=" mb-4">
               Add Quantity

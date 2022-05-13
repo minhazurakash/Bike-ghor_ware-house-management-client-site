@@ -1,62 +1,56 @@
 [
   {
-    "id": 1,
     "name": "BMW T9034 RX",
     "price": 5025,
     "suplier": "Akash",
     "year": 2021,
     "type": "BMW",
-    "made": "JAPAN",
+    "quantity": "50",
     "description": "This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer."
   },
   {
-    "id": 2,
     "name": "BMW T9034 RX",
     "price": 5025,
     "suplier": "Akash",
     "year": 2021,
     "type": "BMW",
-    "made": "JAPAN",
+    "quantity": "50",
     "description": "This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer."
   },
   {
-    "id": 3,
     "name": "BMW T9034 RX",
     "price": 5025,
     "suplier": "Akash",
     "year": 2021,
     "type": "BMW",
-    "made": "JAPAN",
+    "quantity": "50",
     "description": "This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer."
   },
   {
-    "id": 4,
     "name": "BMW T9034 RX",
     "price": 5025,
     "suplier": "Akash",
     "year": 2021,
     "type": "BMW",
-    "made": "JAPAN",
+    "quantity": "50",
     "description": "This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer."
   },
   {
-    "id": 5,
     "name": "BMW T9034 RX",
     "price": 5025,
     "suplier": "Akash",
     "year": 2021,
     "type": "BMW",
-    "made": "JAPAN",
+    "quantity": "50",
     "description": "This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer."
   },
   {
-    "id": 6,
     "name": "BMW T9034 RX",
     "price": 5025,
     "suplier": "Akash",
     "year": 2021,
     "type": "BMW",
-    "made": "JAPAN",
+    "quantity": "50",
     "description": "This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer."
   }
 ]

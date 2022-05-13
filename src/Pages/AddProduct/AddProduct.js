@@ -1,7 +1,44 @@
 import React from "react";
 import { Button, Form } from "react-bootstrap";
+import { useAuthState } from "react-firebase-hooks/auth";
+import auth from "../../firebase.init";
 
 const AddProduct = () => {
+  const [user] = useAuthState(auth);
+  const handleAddProduct = (event) => {
+    event.preventDefault();
+    const email = user.email;
+    const name = event.target.name.value;
+    const price = event.target.price.value;
+    const img = event.target.img.value;
+    const suplier = event.target.suplier.value;
+    const type = event.target.type.value;
+    const year = 2022;
+    const quantity = event.target.quantity.value;
+    const description = event.target.description.value;
+
+    const product = {
+      email,
+      name,
+      price,
+      suplier,
+      type,
+      year,
+      img,
+      quantity,
+      description,
+    };
+    fetch("http://localhost:5000/addproduct", {
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+      },
+      method: "POST",
+      body: JSON.stringify(product),
+    })
+      .then((res) => res.json())
+      .then((data) => console.log(data));
+  };
   return (
     <div className="container py-5">
       <h2 className="text-center fw-bold mb-4">
@@ -9,42 +46,64 @@ const AddProduct = () => {
       </h2>
       <div className="row">
         <div className="col-lg-6 mx-auto">
-          <Form>
+          <Form onSubmit={handleAddProduct}>
             <Form.Group className="mb-3" controlId="formBasicEmail">
-              <Form.Control type="text" placeholder="Product Name" required />
+              <Form.Control
+                name="name"
+                type="text"
+                placeholder="Product Name"
+                required
+              />
             </Form.Group>
 
             <Form.Group className="mb-3" controlId="formBasicPassword">
-              <Form.Control type="number" placeholder="Product pricerequired" />
-            </Form.Group>
-
-            <Form.Group className="mb-3" controlId="formBasicEmail">
-              <Form.Control type="text" placeholder="Product Suplirequireder" />
-            </Form.Group>
-
-            <Form.Group className="mb-3" controlId="formBasicEmail">
-              <Form.Control type="text" placeholder="Product Brandrequired" />
-            </Form.Group>
-
-            <Form.Group className="mb-3" controlId="formBasicEmail">
-              <Form.Control type="number" placeholder="Relase Year" required />
-            </Form.Group>
-
-            <Form.Group className="mb-3" controlId="formBasicEmail">
               <Form.Control
-                type="text"
-                placeholder="Product Origirequiredn Country"
+                name="price"
+                type="number"
+                placeholder="Product price"
+                required
               />
             </Form.Group>
+
             <Form.Group className="mb-3" controlId="formBasicEmail">
               <Form.Control
+                name="suplier"
+                type="text"
+                placeholder="Product Suplier"
+                required
+              />
+            </Form.Group>
+
+            <Form.Group className="mb-3" controlId="formBasicEmail">
+              <Form.Control
+                name="type"
+                type="text"
+                placeholder="Product Brand"
+                required
+              />
+            </Form.Group>
+
+            <Form.Group className="mb-3" controlId="formBasicEmail">
+              <Form.Control
+                name="img"
+                type="text"
+                placeholder="Product Image Link"
+                required
+              />
+            </Form.Group>
+
+            <Form.Group className="mb-3" controlId="formBasicEmail">
+              <Form.Control
+                name="quantity"
                 type="number"
-                placeholder="Product Quantrequiredity"
+                placeholder="Product Quanty"
+                required
               />
             </Form.Group>
 
             <Form.Group className="mb-3" controlId="formBasicEmail">
               <textarea
+                name="description"
                 class="form-control"
                 id="exampleFormControlTextarea1"
                 rows="3"

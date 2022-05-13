@@ -29,19 +29,19 @@ const InventoryProduct = ({ product }) => {
               <small>{product.year}</small>
             </div>
             <div>
-              <h6 className="lh-1 fw-bold">TYPE</h6>
+              <h6 className="lh-1 fw-bold">Brand</h6>
               <small>{product.type}</small>
             </div>
             <div>
-              <h6 className="lh-1 fw-bold">MADE</h6>
-              <small>{product.made}</small>
+              <h6 className="lh-1 fw-bold">Quantity</h6>
+              <small>{product.quantity}</small>
             </div>
           </div>
           <p className="card-text">{product.description}</p>
         </div>
         <div className={`${inventory.updateBtn} `}>
           <button
-            onClick={() => navigate(`/inventory/${product.id}`)}
+            onClick={() => navigate(`/inventory/${product._id}`)}
             className="btn btn-outline-warning"
           >
             Update

@@ -6,7 +6,7 @@ import inventory from "./Inventory.module.css";
 const Inventory = () => {
   const [products, setProducts] = useState([]);
   useEffect(() => {
-    fetch("inventory.json")
+    fetch("http://localhost:5000/products")
       .then((res) => res.json())
       .then((data) => setProducts(data));
   }, []);
@@ -22,7 +22,7 @@ const Inventory = () => {
         <div className="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-5">
           {products.map((product) => (
             <InventoryProduct
-              key={product.id}
+              key={product._id}
               product={product}
             ></InventoryProduct>
           ))}

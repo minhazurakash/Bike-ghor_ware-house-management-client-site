@@ -9,7 +9,7 @@ const RequireAuth = ({ children }) => {
   let location = useLocation();
   if (loading) {
     return (
-      <div className="w-100 text-center mt-5">
+      <div className="w-100 vh-100 d-flex justify-content-center align-items-center my-5 py-5">
         <Spinner animation="border" role="status">
           <span className="visually-hidden">Loading...</span>
         </Spinner>
