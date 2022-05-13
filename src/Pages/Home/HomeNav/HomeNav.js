@@ -21,7 +21,7 @@ const HomeNav = () => {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="ms-auto">
-            <Link to="/home" className="text-white nav-link">
+            <Link to="/" className="text-white nav-link">
               Home
             </Link>
             {user ? (

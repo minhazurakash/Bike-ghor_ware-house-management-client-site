@@ -1,10 +1,30 @@
 import React from "react";
 import { Button, Form } from "react-bootstrap";
-import { Link } from "react-router-dom";
+import {
+  useAuthState,
+  useSignInWithEmailAndPassword,
+} from "react-firebase-hooks/auth";
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import auth from "../../../firebase.init";
 import GoogleSignIn from "../GoogleSignIn/GoogleSignIn";
 import login from "./Login.module.css";
 
 const Login = () => {
+  const [signInWithEmailAndPassword] = useSignInWithEmailAndPassword(auth);
+  const [user] = useAuthState(auth);
+  const location = useLocation();
+  const navigate = useNavigate();
+  const from = location.state?.from?.pathname || "/";
+  if (user) {
+    navigate(from, { replace: true });
+  }
+
+  const handleSignIn = (event) => {
+    event.preventDefault();
+    const email = event.target.email.value;
+    const password = event.target.password.value;
+    signInWithEmailAndPassword(email, password);
+  };
   return (
     <div className="container my-5">
       <div className=" d-flex justify-content-center py-4">
@@ -13,9 +33,10 @@ const Login = () => {
             <div className=" col-md-12 col-lg-6">
               <h2 className="login-header text-primary mb-4">Log in</h2>
               <h5 className="mb-3">Login to stay connected.</h5>
-              <Form>
+              <Form onSubmit={handleSignIn}>
                 <Form.Group className="mb-3" controlId="formBasicEmail">
                   <Form.Control
+                    name="email"
                     type="email"
                     placeholder="Enter email"
                     required
@@ -24,6 +45,7 @@ const Login = () => {
 
                 <Form.Group className="mb-3" controlId="formBasicPassword">
                   <Form.Control
+                    name="password"
                     type="password"
                     placeholder="Password"
                     required
