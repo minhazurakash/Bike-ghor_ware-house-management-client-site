@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { Button, Form } from "react-bootstrap";
 import {
   useAuthState,
@@ -9,12 +9,14 @@ import { toast } from "react-toastify";
 import auth from "../../../firebase.init";
 import GoogleSignIn from "../GoogleSignIn/GoogleSignIn";
 import login from "./Login.module.css";
+const axios = require("axios").default;
 
 const Login = () => {
   const [signInWithEmailAndPassword, signInUser, loading, error] =
     useSignInWithEmailAndPassword(auth);
   const [user] = useAuthState(auth);
   const location = useLocation();
+  const [token, setToken] = useState("");
   const navigate = useNavigate();
   const from = location.state?.from?.pathname || "/";
   useEffect(() => {
@@ -23,6 +25,7 @@ const Login = () => {
       toast.warning(err, { position: "top-center", autoClose: 2000 });
     }
     if (user) {
+      localStorage.setItem("key", token);
       navigate(from, { replace: true });
       toast.success("Login Successful", {
         position: "top-center",
@@ -31,11 +34,21 @@ const Login = () => {
     }
   }, [error, user]);
 
-  const handleSignIn = (event) => {
+  const handleSignIn = async (event) => {
     event.preventDefault();
     const email = event.target.email.value;
     const password = event.target.password.value;
-    signInWithEmailAndPassword(email, password);
+    await signInWithEmailAndPassword(email, password);
+    fetch("http://localhost:5000/login", {
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+      },
+      method: "POST",
+      body: JSON.stringify({ email }),
+    })
+      .then((res) => res.json())
+      .then((data) => setToken(data.token));
   };
   return (
     <div className="container my-5">
