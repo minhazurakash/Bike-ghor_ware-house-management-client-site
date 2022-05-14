@@ -1,17 +1,18 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Button, Form } from "react-bootstrap";
 import {
   useAuthState,
   useCreateUserWithEmailAndPassword,
 } from "react-firebase-hooks/auth";
 import { Link, Navigate, useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 import auth from "../../../firebase.init";
 import GoogleSignIn from "../GoogleSignIn/GoogleSignIn";
 import signup from "./Signup.module.css";
 
 const Signup = () => {
   const [checked, setChecked] = useState(false);
-  const [createUserWithEmailAndPassword] =
+  const [createUserWithEmailAndPassword, createUser, loading, error] =
     useCreateUserWithEmailAndPassword(auth);
   const [user] = useAuthState(auth);
   const navigate = useNavigate();
@@ -22,9 +23,19 @@ const Signup = () => {
     console.log(email, password, user);
     createUserWithEmailAndPassword(email, password);
   };
-  if (user) {
-    navigate("/");
-  }
+  useEffect(() => {
+    if (error) {
+      const err = error.code.split("/")[1];
+      toast.warning(err, { position: "top-center", autoClose: 2000 });
+    }
+    if (user) {
+      navigate("/");
+      toast.success("User created successfully", {
+        autoClose: 1000,
+        position: "top-center",
+      });
+    }
+  }, [error, user]);
 
   return (
     <div className="container my-5">
