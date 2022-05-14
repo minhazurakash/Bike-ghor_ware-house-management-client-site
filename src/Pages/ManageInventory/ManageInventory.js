@@ -1,15 +1,25 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
+import useProducts from "../../hooks/UseProducts";
 import "./ManageInventory.css";
 
 const ManageInventory = () => {
-  const [products, setProducts] = useState([]);
+  const [products, setProducts] = useProducts();
   const navigate = useNavigate();
-  useEffect(() => {
-    fetch("http://localhost:5000/products")
+
+  const handleDelete = (_id) => {
+    fetch(`http://localhost:5000/product/${_id}`, {
+      method: "DELETE",
+    })
       .then((res) => res.json())
-      .then((data) => setProducts(data));
-  }, []);
+      .then((data) => {
+        toast.warning("Delete Successful", {
+          position: "top-center",
+          autoClose: 1000,
+        });
+      });
+  };
   return (
     <div className="container">
       <div className="text-center py-5">
@@ -39,7 +49,12 @@ const ManageInventory = () => {
                 <td>{product.name}</td>
                 <td>{product.quantity}</td>
                 <td>
-                  <button className="btn btn-danger">Delete</button>
+                  <button
+                    onClick={() => handleDelete(product._id)}
+                    className="btn btn-danger"
+                  >
+                    Delete
+                  </button>
                 </td>
               </tr>
             ))}

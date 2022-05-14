@@ -1,16 +1,11 @@
 import { type } from "@testing-library/user-event/dist/type";
-import React, { useEffect, useState } from "react";
+import useProducts from "../../../hooks/UseProducts";
 import InventoryProduct from "../InventoryProduct/InventoryProduct";
 import inventory from "./Inventory.module.css";
 
 const Inventory = () => {
-  const [products, setProducts] = useState([]);
-  useEffect(() => {
-    fetch("http://localhost:5000/products")
-      .then((res) => res.json())
-      .then((data) => setProducts(data));
-  }, []);
-  console.log(products);
+  const [products, setProducts] = useProducts();
+
   return (
     <div id="inventory" className="py-4">
       <div className="text-center animate__animated animate__slideInRight">

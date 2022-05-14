@@ -1,17 +1,30 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
-import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 import auth from "../../firebase.init";
 
 const MyItem = () => {
-  const [products, setProducts] = useState([]);
   const [user] = useAuthState(auth);
-  const navigate = useNavigate();
+  const [products, setProducts] = useState([]);
   useEffect(() => {
     fetch(`http://localhost:5000/product?email=${user.email}`)
       .then((res) => res.json())
       .then((data) => setProducts(data));
-  }, []);
+  }, [products]);
+
+  const handleDelete = (_id) => {
+    fetch(`http://localhost:5000/product/${_id}`, {
+      method: "DELETE",
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        toast.warning("Delete Successful", {
+          position: "top-center",
+          autoClose: 1000,
+        });
+      });
+  };
+
   return (
     <div className="container py-5">
       <div className="text-center ">
@@ -34,7 +47,12 @@ const MyItem = () => {
                 <td>{product.name}</td>
                 <td>{product.quantity}</td>
                 <td>
-                  <button className="btn btn-danger">Delete</button>
+                  <button
+                    onClick={() => handleDelete(product._id)}
+                    className="btn btn-danger"
+                  >
+                    Delete
+                  </button>
                 </td>
               </tr>
             ))}
