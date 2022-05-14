@@ -4,11 +4,18 @@ import { Container, Nav, Navbar } from "react-bootstrap";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { Link, useLocation } from "react-router-dom";
 import auth from "../../../firebase.init";
+import { toast } from "react-toastify";
 
 const Header = () => {
   const [user] = useAuthState(auth);
   const location = useLocation();
-
+  const handleLogOut = () => {
+    signOut(auth);
+    toast.success("Logout Successfull", {
+      position: "top-center",
+      autoClose: 1000,
+    });
+  };
   return (
     <Navbar
       // className="position-sticky"
@@ -28,6 +35,9 @@ const Header = () => {
             <Link to="/" className="text-white nav-link">
               Home
             </Link>
+            <Link to="/Blog" className="text-white nav-link">
+              Blog
+            </Link>
             {user ? (
               <>
                 <Link to="/manage" className="text-white nav-link">
@@ -40,7 +50,7 @@ const Header = () => {
                   My-Item
                 </Link>
                 <span
-                  onClick={() => signOut(auth)}
+                  onClick={handleLogOut}
                   className="text-warning nav-link"
                   style={{ cursor: "pointer" }}
                 >

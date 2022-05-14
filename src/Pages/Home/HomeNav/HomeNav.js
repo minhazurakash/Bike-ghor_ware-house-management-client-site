@@ -18,7 +18,7 @@ const HomeNav = () => {
   return (
     <Navbar
       // className="position-sticky"
-      className="py-4 navbar-dark bg-none fs-5"
+      className="py-4 navbar-dark bg-none "
       bg="none"
       expand="lg"
     >
@@ -28,9 +28,12 @@ const HomeNav = () => {
         </Link>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="ms-auto">
+          <Nav className="ms-auto ">
             <Link to="/" className="text-white nav-link">
               Home
+            </Link>
+            <Link to="/Blog" className="text-white nav-link">
+              Blog
             </Link>
             {user ? (
               <>

@@ -16,6 +16,7 @@ import AddProduct from "./Pages/AddProduct/AddProduct";
 import MyItem from "./Pages/MyItem/MyItem";
 import RequireAuth from "./Pages/Shared/RequireAuth/RequireAuth";
 import NotFound from "./Pages/Shared/NotFound/NotFound";
+import Blog from "./Pages/Blog/Blog";
 
 function App() {
   return (
@@ -33,6 +34,7 @@ function App() {
         <Route path="/login" element={<Login></Login>}></Route>
         <Route path="/signup" element={<Signup></Signup>}></Route>
         <Route path="/reset" element={<Reset></Reset>}></Route>
+        <Route path="/blog" element={<Blog></Blog>}></Route>
         <Route path="*" element={<NotFound></NotFound>}></Route>
         <Route path="/addproduct" element={<AddProduct></AddProduct>}></Route>
         <Route
