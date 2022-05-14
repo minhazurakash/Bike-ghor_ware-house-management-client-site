@@ -5,7 +5,6 @@ import auth from "../../../firebase.init";
 const GoogleSignIn = () => {
   const [user] = useAuthState(auth);
   const [signInWithGoogle] = useSignInWithGoogle(auth);
-  console.log(user);
 
   return (
     <div className="container text-center py-3">

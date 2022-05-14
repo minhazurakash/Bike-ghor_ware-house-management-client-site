@@ -1,23 +1,35 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Button, Form } from "react-bootstrap";
 import {
   useAuthState,
   useSignInWithEmailAndPassword,
 } from "react-firebase-hooks/auth";
 import { Link, useLocation, useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 import auth from "../../../firebase.init";
 import GoogleSignIn from "../GoogleSignIn/GoogleSignIn";
 import login from "./Login.module.css";
 
 const Login = () => {
-  const [signInWithEmailAndPassword] = useSignInWithEmailAndPassword(auth);
+  const [signInWithEmailAndPassword, signInUser, loading, error] =
+    useSignInWithEmailAndPassword(auth);
   const [user] = useAuthState(auth);
   const location = useLocation();
   const navigate = useNavigate();
   const from = location.state?.from?.pathname || "/";
-  if (user) {
-    navigate(from, { replace: true });
-  }
+  useEffect(() => {
+    if (error) {
+      const err = error.code.split("/")[1];
+      toast.warning(err, { position: "top-center", autoClose: 2000 });
+    }
+    if (user) {
+      navigate(from, { replace: true });
+      toast.success("Login Successful", {
+        position: "top-center",
+        autoClose: 2000,
+      });
+    }
+  }, [error, user]);
 
   const handleSignIn = (event) => {
     event.preventDefault();

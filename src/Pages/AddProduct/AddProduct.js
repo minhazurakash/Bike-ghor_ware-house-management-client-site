@@ -39,7 +39,10 @@ const AddProduct = () => {
     })
       .then((res) => res.json())
       .then((data) => console.log(data));
-    toast("Product added");
+    toast.success("Product added", {
+      position: "top-center",
+      autoClose: 2000,
+    });
     event.target.reset();
   };
   return (
