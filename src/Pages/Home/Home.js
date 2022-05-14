@@ -8,6 +8,7 @@ import Inventory from "./Inventory/Inventory";
 import Newslater from "./Newslater/Newslater";
 
 const Home = () => {
+  console.log(process.env);
   return (
     <div>
       <div id={style.home}>
