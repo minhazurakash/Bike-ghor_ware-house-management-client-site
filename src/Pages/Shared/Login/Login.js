@@ -39,7 +39,7 @@ const Login = () => {
     const email = event.target.email.value;
     const password = event.target.password.value;
     await signInWithEmailAndPassword(email, password);
-    fetch("http://localhost:5000/login", {
+    fetch("https://stark-brushlands-59441.herokuapp.com/login", {
       headers: {
         Accept: "application/json",
         "Content-Type": "application/json",

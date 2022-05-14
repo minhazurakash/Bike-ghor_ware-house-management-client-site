@@ -1,3 +1,4 @@
+import { sendEmailVerification } from "firebase/auth";
 import React, { useEffect, useState } from "react";
 import { Button, Form } from "react-bootstrap";
 import {
@@ -13,7 +14,7 @@ import signup from "./Signup.module.css";
 const Signup = () => {
   const [checked, setChecked] = useState(false);
   const [createUserWithEmailAndPassword, createUser, loading, error] =
-    useCreateUserWithEmailAndPassword(auth);
+    useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true });
   const [user] = useAuthState(auth);
   const navigate = useNavigate();
   const handleSignUp = (event) => {

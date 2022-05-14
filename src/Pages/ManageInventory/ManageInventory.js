@@ -9,7 +9,7 @@ const ManageInventory = () => {
   const navigate = useNavigate();
 
   const handleDelete = (_id) => {
-    fetch(`http://localhost:5000/product/${_id}`, {
+    fetch(`https://stark-brushlands-59441.herokuapp.com/product/${_id}`, {
       method: "DELETE",
     })
       .then((res) => res.json())
@@ -35,7 +35,7 @@ const ManageInventory = () => {
         </button>
       </div>
       <div className="table">
-        <table class="table table-striped text-center">
+        <table className="table table-striped text-center">
           <thead>
             <tr>
               <th scope="col">product Name</th>

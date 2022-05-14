@@ -7,13 +7,15 @@ const MyItem = () => {
   const [user] = useAuthState(auth);
   const [products, setProducts] = useState([]);
   useEffect(() => {
-    fetch(`http://localhost:5000/product?email=${user.email}`)
+    fetch(
+      `https://stark-brushlands-59441.herokuapp.com/product?email=${user.email}`
+    )
       .then((res) => res.json())
       .then((data) => setProducts(data));
   }, [products]);
 
   const handleDelete = (_id) => {
-    fetch(`http://localhost:5000/product/${_id}`, {
+    fetch(`https://stark-brushlands-59441.herokuapp.com/product/${_id}`, {
       method: "DELETE",
     })
       .then((res) => res.json())
@@ -33,7 +35,7 @@ const MyItem = () => {
         </h1>
       </div>
       <div className="table">
-        <table class="table table-striped text-center">
+        <table className="table table-striped text-center">
           <thead>
             <tr>
               <th scope="col">product Name</th>

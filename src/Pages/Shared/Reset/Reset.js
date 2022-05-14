@@ -31,7 +31,7 @@ const Reset = () => {
                 className="mt-1 animate__animated animate__fadeIn animate__infinite	infinite animate__slower"
                 to="/login"
               >
-                <i class="fa-solid fa-arrow-left fs-2"></i>
+                <i className="fa-solid fa-arrow-left fs-2"></i>
               </Link>
               <h2 className="text-primary mb-4">Reset Password</h2>
             </div>

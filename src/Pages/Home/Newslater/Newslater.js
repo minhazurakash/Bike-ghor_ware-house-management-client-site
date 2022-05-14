@@ -12,10 +12,10 @@ const Newslater = () => {
               <h1>SUBSCRIBE FOR UPDATED</h1>
             </div>
             <div className="col-lg-6 mb-4 d-block justify-content-center align-items-center">
-              <div class="input-group input-group-lg">
+              <div className="input-group input-group-lg">
                 <input
                   type="text"
-                  class="form-control"
+                  className="form-control"
                   aria-label="Large"
                   placeholder="Enter your email"
                   aria-describedby="inputGroup-sizing-sm"

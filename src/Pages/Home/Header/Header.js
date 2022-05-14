@@ -20,7 +20,7 @@ const Header = () => {
     <Navbar
       // className="position-sticky"
       className={
-        location.pathname === "/" ? "d-none " : "py-3 navbar-dark bg-dark fs-5"
+        location.pathname === "/" ? "d-none " : "py-3 navbar-dark bg-dark "
       }
       bg="none"
       expand="lg"

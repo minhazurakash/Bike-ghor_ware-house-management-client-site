@@ -29,7 +29,7 @@ const AddProduct = () => {
       quantity,
       description,
     };
-    fetch("http://localhost:5000/addproduct", {
+    fetch("https://stark-brushlands-59441.herokuapp.com/addproduct", {
       headers: {
         Accept: "application/json",
         "Content-Type": "application/json",
@@ -110,7 +110,7 @@ const AddProduct = () => {
             <Form.Group className="mb-3" controlId="formBasicEmail">
               <textarea
                 name="description"
-                class="form-control"
+                className="form-control"
                 id="exampleFormControlTextarea1"
                 rows="3"
               ></textarea>

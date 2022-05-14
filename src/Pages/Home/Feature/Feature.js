@@ -35,7 +35,7 @@ const Feature = () => {
                 <div
                   className={`border border-primary p-3 rounded-circle d-flex justify-content-center align-items-center me-3 ${feature.iconDiv}`}
                 >
-                  <i class="fa-solid fa-gear fs-5"></i>
+                  <i className="fa-solid fa-gear fs-5"></i>
                 </div>
                 <h6 className="fw-bold">EASY TO BOOK FOR RENTALS</h6>
               </div>
@@ -44,7 +44,7 @@ const Feature = () => {
                 <div
                   className={`border border-primary p-3 rounded-circle d-flex justify-content-center align-items-center me-3 ${feature.iconDiv}`}
                 >
-                  <i class="fa-solid fa-key fs-5"></i>
+                  <i className="fa-solid fa-key fs-5"></i>
                 </div>
                 <h6 className="fw-bold">LONGER RIDES FOR ALL DAY</h6>
               </div>
@@ -53,7 +53,7 @@ const Feature = () => {
                 <div
                   className={`border border-primary p-3 rounded-circle d-flex justify-content-center align-items-center me-3 ${feature.iconDiv}`}
                 >
-                  <i class="fa-solid fa-gas-pump fs-5"></i>
+                  <i className="fa-solid fa-gas-pump fs-5"></i>
                 </div>
                 <h6 className="fw-bold">GET MILEAGE UNLIMITED</h6>
               </div>

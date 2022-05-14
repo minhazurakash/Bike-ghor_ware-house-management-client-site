@@ -23,20 +23,20 @@ function App() {
     <div className="App">
       <Header></Header>
       <Routes>
-        <Route
-          path="/"
-          element={
-            <RequireAuth>
-              <Home></Home>
-            </RequireAuth>
-          }
-        ></Route>
+        <Route path="/" element={<Home></Home>}></Route>
         <Route path="/login" element={<Login></Login>}></Route>
         <Route path="/signup" element={<Signup></Signup>}></Route>
         <Route path="/reset" element={<Reset></Reset>}></Route>
         <Route path="/blog" element={<Blog></Blog>}></Route>
         <Route path="*" element={<NotFound></NotFound>}></Route>
-        <Route path="/addproduct" element={<AddProduct></AddProduct>}></Route>
+        <Route
+          path="/addproduct"
+          element={
+            <RequireAuth>
+              <AddProduct></AddProduct>
+            </RequireAuth>
+          }
+        ></Route>
         <Route
           path="/myitem"
           element={
@@ -47,11 +47,19 @@ function App() {
         ></Route>
         <Route
           path="/manage"
-          element={<ManageInventory></ManageInventory>}
+          element={
+            <RequireAuth>
+              <ManageInventory></ManageInventory>
+            </RequireAuth>
+          }
         ></Route>
         <Route
           path="/inventory/:id"
-          element={<SingleInventory></SingleInventory>}
+          element={
+            <RequireAuth>
+              <SingleInventory></SingleInventory>
+            </RequireAuth>
+          }
         ></Route>
       </Routes>
       <Footer></Footer>
