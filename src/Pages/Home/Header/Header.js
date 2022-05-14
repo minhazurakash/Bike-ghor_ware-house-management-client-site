@@ -33,6 +33,9 @@ const Header = () => {
                 <Link to="/manage" className="text-white nav-link">
                   Manage-Inventory
                 </Link>
+                <Link to="/addproduct" className="text-white nav-link">
+                  Add-Item
+                </Link>
                 <Link to="/myitem" className="text-white nav-link">
                   My-Item
                 </Link>

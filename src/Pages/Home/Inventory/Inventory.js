@@ -15,7 +15,7 @@ const Inventory = () => {
       </div>
       <div className="container py-5">
         <div className="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-5">
-          {products.map((product) => (
+          {products.slice(0, 6).map((product) => (
             <InventoryProduct
               key={product._id}
               product={product}

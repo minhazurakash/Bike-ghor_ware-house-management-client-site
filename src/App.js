@@ -15,6 +15,7 @@ import SingleInventory from "./Pages/Shared/SingleInventory/SingleInventory";
 import AddProduct from "./Pages/AddProduct/AddProduct";
 import MyItem from "./Pages/MyItem/MyItem";
 import RequireAuth from "./Pages/Shared/RequireAuth/RequireAuth";
+import NotFound from "./Pages/Shared/NotFound/NotFound";
 
 function App() {
   return (
@@ -32,6 +33,7 @@ function App() {
         <Route path="/login" element={<Login></Login>}></Route>
         <Route path="/signup" element={<Signup></Signup>}></Route>
         <Route path="/reset" element={<Reset></Reset>}></Route>
+        <Route path="*" element={<NotFound></NotFound>}></Route>
         <Route path="/addproduct" element={<AddProduct></AddProduct>}></Route>
         <Route
           path="/myitem"
