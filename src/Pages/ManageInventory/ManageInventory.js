@@ -9,7 +9,7 @@ const ManageInventory = () => {
   const navigate = useNavigate();
 
   const handleDelete = (_id) => {
-    fetch(`https://stark-brushlands-59441.herokuapp.com/product/${_id}`, {
+    fetch(`https://bikeghor-server-production.up.railway.app/product/${_id}`, {
       method: "DELETE",
     })
       .then((res) => res.json())

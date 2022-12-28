@@ -29,7 +29,7 @@ const AddProduct = () => {
       quantity,
       description,
     };
-    fetch("https://stark-brushlands-59441.herokuapp.com/addproduct", {
+    fetch("https://bikeghor-server-production.up.railway.app/addproduct", {
       headers: {
         Accept: "application/json",
         "Content-Type": "application/json",

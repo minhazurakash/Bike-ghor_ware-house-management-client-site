@@ -7,7 +7,7 @@ const SingleInventory = () => {
   const { id } = useParams();
   const [product, setProduct] = useState({});
   useEffect(() => {
-    fetch(`https://stark-brushlands-59441.herokuapp.com/product/${id}`)
+    fetch(`https://bikeghor-server-production.up.railway.app/product/${id}`)
       .then((res) => res.json())
       .then((data) => setProduct(data));
   }, [product]);
@@ -16,7 +16,7 @@ const SingleInventory = () => {
   const deliver = () => {
     const previousQuantity = parseInt(product.quantity);
     const newQuantity = previousQuantity - 1;
-    fetch(`https://stark-brushlands-59441.herokuapp.com/update/${id}`, {
+    fetch(`https://bikeghor-server-production.up.railway.app/update/${id}`, {
       headers: {
         Accept: "application/json",
         "Content-Type": "application/json",
@@ -34,7 +34,7 @@ const SingleInventory = () => {
     const previousQuantity = parseInt(product.quantity);
     const quantityInput = parseInt(e.target.quantity.value);
     const newQuantity = previousQuantity + quantityInput;
-    fetch(`https://stark-brushlands-59441.herokuapp.com/update/${id}`, {
+    fetch(`https://bikeghor-server-production.up.railway.app/update/${id}`, {
       headers: {
         Accept: "application/json",
         "Content-Type": "application/json",

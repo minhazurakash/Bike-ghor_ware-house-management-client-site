@@ -8,14 +8,14 @@ const MyItem = () => {
   const [products, setProducts] = useState([]);
   useEffect(() => {
     fetch(
-      `https://stark-brushlands-59441.herokuapp.com/product?email=${user.email}`
+      `https://bikeghor-server-production.up.railway.app/product?email=${user.email}`
     )
       .then((res) => res.json())
       .then((data) => setProducts(data));
   }, [products]);
 
   const handleDelete = (_id) => {
-    fetch(`https://stark-brushlands-59441.herokuapp.com/product/${_id}`, {
+    fetch(`https://bikeghor-server-production.up.railway.app/product/${_id}`, {
       method: "DELETE",
     })
       .then((res) => res.json())

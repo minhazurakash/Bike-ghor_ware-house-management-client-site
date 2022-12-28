@@ -39,7 +39,7 @@ const Login = () => {
     const email = event.target.email.value;
     const password = event.target.password.value;
     await signInWithEmailAndPassword(email, password);
-    fetch("https://stark-brushlands-59441.herokuapp.com/login", {
+    fetch("https://bikeghor-server-production.up.railway.app/login", {
       headers: {
         Accept: "application/json",
         "Content-Type": "application/json",
